@@ -12,7 +12,7 @@ Steps for install helm chart into kubernetes cluster :
 
 
 Step 1: Obtain the application source code
-
+To begin the process, ensure that you have access to the application source code. The application code for the current example is stored in a Git repository
 
 Step 2: Build the Docker image
 
@@ -32,15 +32,21 @@ Helm Chart is already provided in the repo but we need to edit in value.yaml.
 values.yaml: This file declares variables to be passed into the templates. It is important to replace the USERNAME with your Docker ID, and also to check if the container name and version exist.
 
 image: 
-repository: muneeb0724/rlf-test
-tag: 0.1.0
+repository: gcr.io/devsecops-282910/rlt-test
+tag: tag1
 
 Step 5: Deploy the example application in Kubernetes
 
 First, make sure that you are able to connect to your Kubernetes cluster by executing the command below:
 kubectl cluster-info
 
-helm install rlf-test
+helm install rlf-test .
 
 Run the kubectl get pods command to get a list of running pods:
 kubectl get pods
+
+for revison/editiong the value you can run 
+helm upgrade rlt-test . 
+
+NOTE: Make sure tthat your docker image should be public otherwise it gives you Imageloopbackoff error.
+
