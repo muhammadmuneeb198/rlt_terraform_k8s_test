@@ -1,0 +1,14 @@
+Launch and manage a GKE cluster using Terraform.
+
+
+There are four files named main.tf, outputs.tf, variables.tf, version.tf.
+
+Download the zip files through git and unzip it. Go to particular directory and run the following commands
+
+$ terraform init
+$ terraform plan
+$ terraform apply
+
+Terraform apply takes few minutes.
+
+after the completion, you can see the output.
