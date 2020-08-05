@@ -1,1 +1,2 @@
-Readme
+<?php
+echo "OK";
