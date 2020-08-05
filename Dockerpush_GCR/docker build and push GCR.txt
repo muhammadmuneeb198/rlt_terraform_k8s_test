@@ -1,0 +1,23 @@
+Pre requisites: 
+
+Docker installation and Docker login.
+install updated SDK
+check docker is running by running " docker run busybox date "
+
+
+Steps to create : 
+
+docker build -t rlf-test1 .
+
+gcloud auth configure-docker
+
+docker tag rlf-test1 gcr.io/devsecops-282910/rlf-test1:tag1
+
+docker push gcr.io/devsecops-282910/rlt-test:tag1
+
+
+Issue faces: 
+
+unauthorized: You don't have the needed permissions to perform this operation, and you may have invalid credentials. To authenticate your request, follow the steps in: https://cloud.google.com/container-registry/docs/advanced-authentication
+
+The above issue occures because of permission issue of storage as PUSH AND PULL image require read&write storage access OR you have forget to login in docker
